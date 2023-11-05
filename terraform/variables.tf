@@ -27,5 +27,9 @@ variable "db_username" {
 }
 
 variable "domain" {
-  default = "app.demo2.yulia1.pp.ua"
+  default = "app.demo4.yulia1.pp.ua"
+}
+
+variable "cluster_name" {
+  default = "eks-demo"
 }
