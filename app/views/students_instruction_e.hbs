@@ -1,0 +1,32 @@
+<div class="container" style="min-height: 50vh">
+    <div class="row">
+        <div class ="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center mx-auto">
+            <h2 class="nuwm_text">Студенти інструктажу <br> (новий запис)</h2>
+          <form action="/students_instruction_e/{{students_instruction.Id_st_instruction}}" method="post">
+               <div class="form-group">
+                  <label for="Id_instruction" class="nuwm_text_form">Код інструктажу</label>
+                  <input type="text" class="form-control" name="Id_instruction" placeholder="Введіть дату інструктажу" value="{{students_instruction.Id_instruction}}" readonly>
+              </div>
+              <div class="form-group">
+                  <label for="Id_student" class="nuwm_text_form">ПІБ студента</label>
+                    <input list="id" class="form-control" name="Id_student"
+                    placeholder="Вкажіть ПІБ студента" autocomplete="off"  value="{{students_instruction.Id_student}}">
+                  <datalist id="id">
+                      {{#each students}}
+                      <option value="{{this.Id_student}}">
+                      {{this.pib}}
+                      </option>
+                      {{/each}}
+                  </datalist>
+                  </div>
+              <div class="form-group">
+                  <label for="additionally" class="nuwm_text_form">Додатково</label>
+                  <input type="text" class="form-control" name="additionally" placeholder="Введіть додатково" value="{{students_instruction.additionally}}">
+              </div>
+             <input type="hidden" name="Id_st_instruction" value="{{students_instruction.Id_st_instruction}}" />
+             <button type="submit" class="nuwm_button">Зберегти</button>
+             <button type="reset" class="nuwm_button">Очистити</button>
+          </form>
+        </div>
+    </div>
+</div>

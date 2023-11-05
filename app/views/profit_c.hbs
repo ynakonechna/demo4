@@ -1,0 +1,29 @@
+<div class="container" style="min-height: 50vh">
+    <div class="row">
+        <div class ="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center mx-auto">
+            <h2 class="nuwm_text">Нарахування <br> (новий запис)</h2>
+          <form method="post">
+              <div class="form-group">
+                  <label for="pib" class="nuwm_text_form">ПІБ студента</label>
+                    <input type="text" class="form-control" name="pib" value="{{student.pib}}" readonly>
+                  </div>
+              <div class="form-group">
+                  <label for="date_profit" class="nuwm_text_form">Дата нарахування</label>
+                  <input type="date" class="form-control" name="date_profit" placeholder="Введіть дату нарахування">
+              </div>
+              <div class="form-group">
+                  <label for="amount" class="nuwm_text_form">Сума</label>
+                  <input type="text" class="form-control" name="amount" placeholder="Введіть суму нарахування">
+              </div>
+              <div class="form-group">
+                  <label for="type_profit" class="nuwm_text_form">Тип нарахування</label>
+                  <input type="text" class="form-control" name="type_profit" placeholder="Введіть тип нарахування">
+              </div>
+              <input type="hidden" name="Id_student" value="{{student.Id_student}}"/>
+             <button type="submit" class="nuwm_button">Зберегти</button>
+             <button type="reset" class="nuwm_button">Очистити</button>
+          </form>
+        </div>
+    </div>
+</div>
+

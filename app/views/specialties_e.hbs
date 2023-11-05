@@ -1,0 +1,27 @@
+<div class="container" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-6 text-center mx-auto">
+            <h2 class="nuwm_text">Спеціальність
+                &#8220;{{specialties.name}}&#8221;
+                <br>(редагувати)
+            </h2>
+           <form action="/specialties_e" method="post">
+             <input type="hidden" name="Id_specialty" value="{{specialties.Id_specialty}}" />
+             <div class="form-group">
+                 <label for="code_specialty" class="nuwm_text_form">Код спеціальності</label>
+                 <input type="text" class="form-control" name="code_specialty" placeholder="Введіть код спеціальності"
+                 value = "{{specialties.code_specialty}}">
+             </div>
+             <div class="form-group">
+                 <label for="name" class="nuwm_text_form">Назва спеціальності</label>
+                 <input type="text" class="form-control" name="name" placeholder="Введіть назву спеціальності"
+                 value = "{{specialties.name}}">
+             </div>
+             <button type="submit" class="nuwm_button">Зберегти</button>
+             <button type="reset" class="nuwm_button">Очистити</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

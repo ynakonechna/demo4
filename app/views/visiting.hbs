@@ -1,0 +1,89 @@
+<div class="container-fluid" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="nuwm_text">Відвідування</h1>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+        <form action="/visiting/data" method="post" class="form-inline my-2">
+            <div class="form-group mx-auto">
+                <div class="form-group">
+                    <label for="data_pochatku" class="nuwm_text_form">з</label>
+                    <input type="date" class="form-control mx-2" name="data_pochatku" value="{{data_pochatku}}">
+                </div>
+                <div class="form-group">
+                    <label for="data_zakinchennya" class="nuwm_text_form">по</label>
+                    <input type="date" class="form-control mx-2" name="data_zakinchennya" value="{{data_zakinchennya}}">
+                </div>
+                <button type="submit" class="nuwm_button">Показати</button>
+            </div>
+        </form>
+    </div>
+    <div class="table-responsive text-center" style="height: 300px">
+    <table class="table table-hover table-bordered nuwm_table">
+        <tbody>
+            <tr class="text-dark table-primary">
+                <th scope="col" ></th>
+                <th scope="col" >Код відвідування</th>
+                <th scope="col" >Код студента</th>
+                <th scope="col" >Дані відвідувача</th>
+                <th scope="col" >Час</th>
+                <th scope="col" >Вхід/Вихід</th>
+                <th scope="col" >ПІБ студента</th>
+            </tr>
+            {{#each visiting}}
+            <tr class="text-dark">
+                <td>
+                    <form action="/visiting_d/{{this.Id_visiting}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Видалити" class="nuwm_button"/>
+                    </form>
+                </td>
+                <td>
+                    {{this.Id_visiting}}
+                </td>
+                <td>
+                    {{this.Id_student}}
+                </td>
+                <td>
+                    {{this.data_visitor}}
+                </td>
+                <td>
+                    {{this.time_e}}
+                </td>
+                <td>
+                    {{this.exit_entrance}}
+                </td>
+                <td>
+                    {{this.pib}}
+                </td>
+            </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+<hr>
+
+<div class="table-responsive text-center">
+    <div class="col-3 text-center mx-auto">
+           <form action="/visiting_c" method="post">
+             <div class="form-group">
+                 <label for="Id_student" class="nuwm_text_form">Код студента</label>
+                 <input type="text" class="form-control" name="Id_student" placeholder="Введіть код студента">
+             </div>
+             <div class="form-group">
+                 <label for="data_visitor" class="nuwm_text_form">Дані відвідувача</label>
+                 <input type="text" class="form-control" name="data_visitor" placeholder="Введіть дані відвідувача">
+             </div>
+             <div class="form-group">
+                 <label for="exit_entrance" class="nuwm_text_form">Вхід/Вихід</label>
+                 <input type="checkbox" class="form-control" name="exit_entrance">
+             </div>
+             <button type="submit" class="nuwm_button">Зберегти</button>
+             <button type="reset" class="nuwm_button">Очистити</button>
+            </form>
+        </div>
+        </div>
+</div>

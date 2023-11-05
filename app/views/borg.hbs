@@ -1,0 +1,22 @@
+<table width="100%" border="1" class="nuwm_table">
+    <tbody>
+        <tr align="center" style="font-weight: 600;">
+            <td>Гуртожитка №</td>
+            <td>Кімнати</td>
+            <td>Студент</td>
+            <td>Нараховано, грн</td>
+            <td>Оплачено, грн</td>
+            <td>Борг, грн</td>
+        </tr>
+           {{#each borg}}
+        <tr>
+            <td align="center">{{this.number}}</td>
+            <td align="center">{{this.number_room}}</td>
+            <td align="center">{{this.pib}}</td>
+            <td align="center">{{this.profit_amount}}</td>
+            <td align="center">{{this.payment_amount}}</td>
+            <td align="center">{{this.debt}}</td>
+        </tr>
+    </tbody>
+       {{/each}}
+</table>

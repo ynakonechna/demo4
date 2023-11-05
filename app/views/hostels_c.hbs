@@ -1,0 +1,31 @@
+<div class="container" style="min-height: 50vh">
+    <div class="row">
+        <div class ="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center mx-auto">
+            <h2 class="nuwm_text">Гуртожиток <br> (новий запис)</h2>
+          <form method="post">
+              <div class="form-group">
+                  <label for="Id_manager" class="nuwm_text_form">ПІБ керуючого</label>
+                    <input list="id" class="form-control" name="Id_manager"
+                    placeholder="Вкажіть керуючого" autocomplete="off">
+                  <datalist id="id">
+                      {{#each managers}}
+                      <option value="{{this.Id_manager}}">
+                      {{this.pib}}
+                      </option>
+                      {{/each}}
+                  </datalist>
+                  </div>
+              <div class="form-group">
+                  <label for="number" class="nuwm_text_form">Номер гуртожитка</label>
+                  <input type="text" class="form-control" name="number" placeholder="Введіть номер гуртожитка">
+              </div>
+              <div class="form-group">
+                  <label for="adress" class="nuwm_text_form">Адреса</label>
+                  <input type="text" class="form-control" name="adress" placeholder="Введіть адресу">
+              </div>
+             <button type="submit" class="nuwm_button">Зберегти</button>
+             <button type="reset" class="nuwm_button">Очистити</button>
+          </form>
+        </div>
+    </div>
+</div>

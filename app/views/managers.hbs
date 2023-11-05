@@ -1,0 +1,57 @@
+<div class="container-fluid" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="nuwm_text">Керуючі гуртожитками</h1>
+<div class="text-right nuwm_add_button_div">
+              <a href="/managers_c" class="nuwm_button">Додати запис</a>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered nuwm_table">
+        <tbody>
+            <tr class="text-dark table-primary">
+                <th scope="col" ></th>
+                <th scope="col" ></th>
+                <th scope="col" >Код</th>
+                <th scope="col" >ПІБ керуючого</th>
+                <th scope="col" >Телефон</th>
+                <th scope="col" >E-mail</th>
+            </tr>
+            {{#each managers}}
+            <tr class="text-dark">
+                <td>
+                    <form action="managers_d/{{this.Id_manager}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Видалити" class="nuwm_button"/>
+                    </form>
+                </td>
+                <td>
+                    <a href="/managers_e/{{this.Id_manager}}" class="nuwm_button">Редагувати</a>
+                </td>
+                <td>
+                    {{this.Id_manager}}
+                </td>
+                <td>
+                    {{this.pib}}
+                </td>
+                <td>
+                    {{this.phone}}
+                </td>
+                <td>
+                    {{this.e_mail}}
+                </td>
+            </tr>
+            {{/each}}
+        
+
+
+
+
+        </tbody>
+    </table>
+</div>
+
+
+
+
+        </div>
+    </div>
+</div>

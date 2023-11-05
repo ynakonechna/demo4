@@ -1,0 +1,16 @@
+<table width="100%" border="1" class="nuwm_table">
+    <tbody>
+        <tr align="center" style="font-weight: 600;">
+            <td>Номер гуртожитка</td>
+            <td>Номер кімнати</td>
+            <td>Дата останнього ремонту</td>
+        </tr>
+           {{#each rooms_repair}}
+        <tr>
+            <td align="center">{{this.number}}</td>
+            <td align="center">{{this.number_room}}</td>
+            <td align="center">{{this.date_last_repair}}</td>
+        </tr>
+    </tbody>
+       {{/each}}
+</table>

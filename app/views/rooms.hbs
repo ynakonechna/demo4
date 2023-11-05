@@ -1,0 +1,75 @@
+<div class="container-fluid" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="nuwm_text">Кімнати гуртожитку номер 
+                &#8220;{{hostel_number}}&#8221;
+            </h1>
+<div class="text-right nuwm_add_button_div">
+              <a href="/rooms_c/{{this.Id_room}}" class="nuwm_button">Додати запис</a>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered nuwm_table">
+        <tbody>
+            <tr class="text-dark table-primary">
+                <th scope="col" ></th>
+                <th scope="col" ></th>
+                <th scope="col" ></th>
+                <th scope="col" >Код</th>
+                <th scope="col" >Номер гуртожитка</th>
+                <th scope="col" >Номер кімнати</th>
+                <th scope="col" >Кількість місць</th>
+                <th scope="col" >Характеристика</th>
+                <th scope="col" >Дата останнього ремонту</th>
+            </tr>
+            {{#each rooms}}
+            <tr class="text-dark">
+                <td>
+                    <form action="/rooms_d/{{this.Id_room}}/hostel/{{Id_hostel}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Видалити" class="nuwm_button"/>
+                    </form>
+                </td>
+                <td>
+                    <a href="/rooms_e/{{this.Id_room}}" class="nuwm_button">Редагувати</a>
+                </td>
+                 <td>
+                    <a href="/students/number_room/{{this.number_room}}/id_room/{{this.Id_room}}" class="nuwm_button">Показати студентів</a>
+                </td>
+                <td>
+                    {{this.Id_room}}
+                </td>
+                <td>
+                    {{this.Id_hostel}}
+                </td>
+                <td>
+                    {{this.number_room}}
+                </td>
+                <td>
+                    {{this.number_seats}}
+                </td>
+                <td>
+                    {{this.characteristic}}
+                </td>
+                <td>
+                    {{this.date_last_repair}}
+                </td>
+                {{!-- <td> --}}
+                    {{!-- <input type="hidden" name="Id_manager" value="{{this.Id_manager}}"/> --}}
+                {{!-- </td> --}}
+
+            </tr>
+            {{/each}}
+        
+
+
+
+
+        </tbody>
+    </table>
+</div>
+
+
+
+
+        </div>
+    </div>
+</div>

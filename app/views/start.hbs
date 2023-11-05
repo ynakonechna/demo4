@@ -1,0 +1,42 @@
+<div class="container-fluid" style="min-height: 50vh">
+ 
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 text-center mx-auto">
+            <h4 class="nuwm_text">Авторизація</h4>
+            <form name="login">
+                <div class="form-group">
+                    <label for="name_user" class="nuwm_text_form">Логін (E_mail):</label>
+                    <input type="email" class="form-control" name="name_user" placeholder="Введіть логін">
+                </div>
+                <div class="form-group">
+                    <label for="parol" class="nuwm_text_form">Пароль:</label>
+                    <input type="password" class="form-control" name="parol" placeholder="Введіть пароль">
+                </div>
+                <input type="button" class="nuwm_button" value="Увійти" id="btn"/>
+            </form>
+        </div>
+    </div>
+ 
+</div>
+
+<script>
+        window.onload = () => {
+            
+            let btn = document.getElementById('btn');
+            let inputs = document.getElementsByTagName('input');
+            
+            btn.addEventListener('click', () => {
+                let xhr = new XMLHttpRequest();
+                xhr.open('POST', '/login');
+                let userData = {
+                    username: inputs[0].value,
+                    password: inputs[1].value
+                }
+                xhr.onload = () => {
+                    location.href = '/visiting'
+                }
+                xhr.setRequestHeader('Content-Type','application/json');
+                xhr.send(JSON.stringify(userData));
+            })
+        }
+</script>

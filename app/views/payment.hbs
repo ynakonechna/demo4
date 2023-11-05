@@ -1,0 +1,59 @@
+<div class="container-fluid" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2 class="nuwm_text">Оплата студента &#8220;{{pib_s}}&#8220;</h2>
+<div class="text-right nuwm_add_button_div">
+              <a href="/payment_с" class="nuwm_button">Додати запис</a>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered nuwm_table">
+        <tbody>
+            <tr class="text-dark table-primary">
+                <th scope="col" ></th>
+                <th scope="col" >Код</th>
+                <th scope="col" >Дата оплати</th>
+                <th scope="col" >Сума</th>
+                <th scope="col" >Призначення</th>
+            </tr>
+            {{#each payment}}
+            <tr class="text-dark">
+                <td>
+                    <form action="/payment_d/{{this.Id_payment}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Видалити" class="nuwm_button"/>
+                    </form>
+                </td>
+ 
+               
+                <td>
+                    {{this.Id_payment}}
+                </td>
+                <td>
+                    {{this.date_payment}}
+                </td>
+                <td>
+                    {{this.amount}}
+                </td>
+                <td>
+                    {{this.appointment}}
+                </td>
+                {{!-- <td> --}}
+                    {{!-- <input type="hidden" name="Id_manager" value="{{this.Id_manager}}"/> --}}
+                {{!-- </td> --}}
+
+            </tr>
+            {{/each}}
+        
+
+
+
+
+        </tbody>
+    </table>
+</div>
+
+
+
+
+        </div>
+    </div>
+</div>

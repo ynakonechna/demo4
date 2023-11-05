@@ -1,0 +1,63 @@
+<div class="container" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-6 text-center mx-auto">
+            <h2 class="nuwm_text">Студент з {{students.number_room}} кімнати
+                <br>(редагувати)
+            </h2>
+           <form action="/students_e" method="post">
+             <input type="hidden" name="Id_student" value="{{students.Id_student}}" />
+             <div class="form-group">
+                  <label for="Id_specialty" class="nuwm_text_form">Назва спеціальності</label>
+                    <input list="id" class="form-control" name="Id_specialty"
+                    placeholder="Вкажіть назву спеціальності" autocomplete="off" value="{{students.Id_specialty}}">
+                  <datalist id="id">
+                      {{#each specialties}}
+                      <option value="{{this.Id_specialty}}">
+                        {{this.name}}
+                      </option>
+                      {{/each}}
+                  </datalist>
+                  </div>
+             <div class="form-group">
+                 <label for="pib" class="nuwm_text_form">ПІБ</label>
+                 <input type="text" class="form-control" name="pib" placeholder="Введіть ПІБ студента"
+                 value = "{{students.pib}}">
+             </div>
+             <div class="form-group">
+                 <label for="phone" class="nuwm_text_form">Телефон</label>
+                 <input type="text" class="form-control" name="phone" placeholder="Введіть телефон"
+                 value = "{{students.phone}}">
+             </div>
+             <div class="form-group">
+                 <label for="e_mail" class="nuwm_text_form">E-mail</label>
+                 <input type="text" class="form-control" name="e_mail" placeholder="Введіть E-mail"
+                 value = "{{students.e_mail}}">
+             </div>
+             <div class="form-group">
+                 <label for="adress" class="nuwm_text_form">Адреса</label>
+                 <input type="text" class="form-control" name="adress" placeholder="Введіть дату останнього ремонту"
+                 value = "{{students.adress}}">
+             </div>
+             <div class="form-group">
+                 <label for="foreigner" class="nuwm_text_form">Іноземець?</label>
+                 <input type="checkbox" class="form-control" name="foreigner" placeholder="Позначте чи студент іноземець" {{students.foreigner}}>
+             </div>
+             <div class="form-group">
+                 <label for="year_entry" class="nuwm_text_form">Рік вступу</label>
+                 <input type="text" class="form-control" name="year_entry" placeholder="Введіть рік вступу"
+                 value = "{{students.year_entry}}">
+             </div>
+             <div class="form-group">
+                 <label for="date_leave" class="nuwm_text_form">Дата вибуття</label>
+                 <input type="date" class="form-control" name="date_leave" placeholder="Введіть дату вибуття"
+                 value = "{{students.date_leave}}">
+             </div>
+             <input type="hidden" name="Id_room" value="{{students.Id_room}}"/>
+             <button type="submit" class="nuwm_button">Зберегти</button>
+             <button type="reset" class="nuwm_button">Очистити</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

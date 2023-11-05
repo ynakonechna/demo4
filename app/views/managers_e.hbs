@@ -1,0 +1,32 @@
+<div class="container" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-6 text-center mx-auto">
+            <h2 class="nuwm_text">Керуючий гуртожитком
+                &#8220;{{managers.pib}}&#8221;
+                <br>(редагувати)
+            </h2>
+           <form action="/managers_e" method="post">
+             <input type="hidden" name="Id_manager" value="{{managers.Id_manager}}" />
+             <div class="form-group">
+                 <label for="pib" class="nuwm_text_form">ПІБ керуючого</label>
+                 <input type="text" class="form-control" name="pib" placeholder="Введіть ПІБ керуючого"
+                 value = "{{managers.pib}}">
+             </div>
+             <div class="form-group">
+                 <label for="phone" class="nuwm_text_form">Телефон</label>
+                 <input type="text" class="form-control" name="phone" placeholder="Введіть номер телефону"
+                 value = "{{managers.phone}}">
+             </div>
+             <div class="form-group">
+                 <label for="e_mail" class="nuwm_text_form">E-mail</label>
+                 <input type="text" class="form-control" name="e_mail" placeholder="Введіть E-mail"
+                 value = "{{managers.e_mail}}">
+             </div>
+             <button type="submit" class="nuwm_button">Зберегти</button>
+             <button type="reset" class="nuwm_button">Очистити</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

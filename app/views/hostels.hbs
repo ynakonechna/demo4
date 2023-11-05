@@ -1,0 +1,61 @@
+<div class="container-fluid" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="nuwm_text">Гуртожитки</h1>
+            <div class="text-right nuwm_add_button_div">
+              <a href="/hostels_c" class="nuwm_button">Додати запис</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered nuwm_table">
+                    <tbody>
+                        <tr class="text-dark table-primary">
+                            <th scope="col" ></th>
+                            <th scope="col" ></th>
+                            <th scope="col" ></th>
+                            <th scope="col" >Код</th>
+                            <th scope="col" >ПІБ керуючого</th>
+                            <th scope="col" >Номер гуртожитка</th>
+                            <th scope="col" >Адреса</th>
+                        </tr>
+                        {{#each hostels}}
+                        <tr class="text-dark">
+                            <td>
+                                <form action="/hostels_d/{{this.Id_hostel}}" method="POST" style="display:inline;">
+                                    <input type="submit" value="Видалити" class="nuwm_button"/>
+                                </form>
+                            </td>
+                            <td>
+                                <a href="/hostels_e/{{this.Id_hostel}}" class="nuwm_button">Редагувати</a>
+                            </td>
+                            <td>
+                                <a href="/rooms/{{this.Id_hostel}}" class="nuwm_button">Показати кімнати</a>
+                            </td>
+                            <td>
+                                {{this.Id_hostel}}
+                            </td>
+                            <td>
+                                {{this.pib}}
+                            </td>
+                            <td>
+                                {{this.number}}
+                            </td>
+                            <td>
+                                {{this.adress}}
+                            </td>
+                            {{!-- <td> --}}
+                                {{!-- <input type="hidden" name="Id_manager" value="{{this.Id_manager}}"/> --}}
+                            {{!-- </td> --}}
+
+                        </tr>
+                        {{/each}}
+                    
+
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

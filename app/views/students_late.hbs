@@ -1,0 +1,18 @@
+<table width="100%" border="1" class="nuwm_table">
+    <tbody>
+        <tr align="center" style="font-weight: 600;">
+            <td>ПІБ студента</td>
+            <td>Номер кімнати</td>
+            <td>Час входу</td>
+            <td>Номер телефон</td>
+        </tr>
+           {{#each students_late}}
+        <tr>
+            <td>{{this.pib}}</td>
+            <td align="center">{{this.number_room}}</td>
+            <td align="center">{{this.time_e}}</td>
+            <td align="center">{{this.phone}}</td>
+        </tr>
+    </tbody>
+       {{/each}}
+</table>

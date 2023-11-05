@@ -1,0 +1,98 @@
+<div class="container-fluid" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="nuwm_text">Студенти</h1>
+
+        </div>
+    </div>
+    {{!-- {{#if students_visible}} --}}
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2 class="nuwm_text">з кімнати &#8220;{{number_room}}&#8220;</h2>
+        </div>
+    </div>
+
+    {{!-- {{else}}
+
+    <div class="col-6 text-center mx-auto">
+        <form method="post" class="form-inline">
+            <div class="form-group mx-auto">
+              <div class="form-group">
+                 <div class="form-group">
+                     <input list="id" class="form-control" name="nazva_kafedry"
+                     placeholder="Виберіть кімнату" autocomplete="off">
+                 </div>
+                 <datalist id="id">
+                     {{#each spivrobitnyky}}
+                     <option value="{{this.nazva_kafedry}}"></option>
+                     {{/each}}
+                 </datalist>
+              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary mx-1 my-2">Показати</button>
+              </div>
+            </div>
+        </form>
+    </div>
+
+    {{/if}} --}}
+
+    {{!-- {{#if spivrobitnyky_visible}} --}}
+
+    <div class="text-right nuwm_add_button_div" >
+        <a href="/students_c" class="nuwm_button">Додати запис</a>
+    </div>
+
+    <div class="row">
+
+        {{#each students}}
+
+        <div class="card text-center col-md-3">
+            <div class="card-header"> Код студента: <b>{{this.Id_student}}</b> <a href="/order/{{this.Id_student}}" class="nuwm_button" style="background-color: #4dafe0;" >Ордер</a></div>
+        <div class="card_body">
+                 <h5 class="card-title"><b>{{this.pib}}</b></h5>
+                 <p class="card-text">Кімната: {{this.number_room}}</p> 
+                 <p class="card-text">Спеціальність: {{this.name}}</p> 
+                 <p class="card-text">Телефон: {{this.phone}}</p> 
+                 <p class="card-text">E-mail: {{this.e_mail}}</p> 
+                 <p class="card-text">Адреса: {{this.adress}}</p> 
+                 <p class="card-text">Іноземець?: {{this.foreigner}}</p> 
+                 <p class="card-text">Рік вступу: {{this.year_entry}}</p> 
+                 <p class="card-text">Дата вибуття: {{this.date_leave}}</p> 
+
+            </div>
+            <div class="card-footer text-muted">
+                 <form action="/students_d/{{this.Id_student}}" method="post" style="display: inline;">
+                             <input type="submit" value="Видалити" class="nuwm_button_student_1"/>
+                 </form>
+             </a>
+                 <a href="/students_e/{{this.Id_student}}" class="nuwm_button_student_1">Редагувати</a> <br>
+                 <a href="/profit/{{this.Id_student}}" class="nuwm_button_student_2">Нарахування</a>
+                 <a href="/payment/{{this.Id_student}}" class="nuwm_button_student_2">Оплата</a>
+                 <a href="/debt/{{this.Id_student}}" class="nuwm_button_student_2">Борг</a>
+                 {{!-- <div style="height: 10px;"> --}}
+                    
+                 {{!-- </div> --}}
+             </div>
+        </div>
+    
+
+         {{/each}}
+
+
+    </div>
+
+    {{!-- {{/if}} --}}
+
+
+
+
+</div>
+
+<style>
+    .right {
+  position: absolute;
+  right: 20px;
+  color: #000;
+}
+</style>

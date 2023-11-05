@@ -1,0 +1,53 @@
+<div class="container-fluid" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="nuwm_text">Спеціальності</h1>
+<div class="text-right nuwm_add_button_div">
+              <a href="/specialties_c" class="nuwm_button">Додати запис</a>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered nuwm_table">
+        <tbody>
+            <tr class="text-dark table-primary">
+                <th scope="col" ></th>
+                <th scope="col" ></th>
+                <th scope="col" >Код</th>
+                <th scope="col" >Код спеціальності</th>
+                <th scope="col" >Назва</th>
+            </tr>
+            {{#each specialties}}
+            <tr class="text-dark">
+                <td>
+                    <form action="delete/{{this.Id_specialty}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Видалити" class="nuwm_button"/>
+                    </form>
+                </td>
+                <td>
+                    <a href="/specialties_e/{{this.Id_specialty}}" class="nuwm_button">Редагувати</a>
+                </td>
+                <td>
+                    {{this.Id_specialty}}
+                </td>
+                <td>
+                    {{this.code_specialty}}
+                </td>
+                <td>
+                    {{this.name}}
+                </td>
+            </tr>
+            {{/each}}
+        
+
+
+
+
+        </tbody>
+    </table>
+</div>
+
+
+
+
+        </div>
+    </div>
+</div>

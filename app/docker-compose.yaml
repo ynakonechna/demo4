@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: app
+    environment:
+    - PG_HOST=db-demo.cd9ylovgoek4.eu-north-1.rds.amazonaws.com
+    - PG_USERNAME=admin
+    - PG_DATABASE=nuwmhostels
+    - PG_PASSWORD=vfFPsFCjH0HLziZR
+    ports: 
+    - 3000:3000

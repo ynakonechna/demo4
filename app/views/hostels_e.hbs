@@ -1,0 +1,39 @@
+<div class="container" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-6 text-center mx-auto">
+            <h2 class="nuwm_text">Гуртожиток
+                &#8220;{{hostels.number}}&#8221;
+                <br>(редагувати)
+            </h2>
+           <form action="/hostels_e" method="post">
+             <input type="hidden" name="Id_hostel" value="{{hostels.Id_hostel}}" />
+             <div class="form-group">
+                  <label for="Id_manager" class="nuwm_text_form">ПІБ керуючого</label>
+                    <input list="id" class="form-control" name="Id_manager"
+                    placeholder="Вкажіть керуючого" autocomplete="off" value="{{hostels.Id_manager}}">
+                  <datalist id="id">
+                      {{#each managers}}
+                      <option value="{{this.Id_manager}}">
+                      {{this.pib}}
+                      </option>
+                      {{/each}}
+                  </datalist>
+                  </div>
+             <div class="form-group">
+                 <label for="number" class="nuwm_text_form">Номер гуртожитка</label>
+                 <input type="text" class="form-control" name="number" placeholder="Введіть номер гуртожитка"
+                 value = "{{hostels.number}}">
+             </div>
+             <div class="form-group">
+                 <label for="adress" class="nuwm_text_form">Адреса</label>
+                 <input type="text" class="form-control" name="adress" placeholder="Введіть адресу гуртожитка"
+                 value = "{{hostels.adress}}">
+             </div>
+             <button type="submit" class="nuwm_button">Зберегти</button>
+             <button type="reset" class="nuwm_button">Очистити</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

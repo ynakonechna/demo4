@@ -1,0 +1,49 @@
+<div class="container" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-6 text-center mx-auto">
+            <h2 class="nuwm_text">Кімната
+                &#8220;{{rooms.number_room}}&#8221;
+                <br>(редагувати)
+            </h2>
+           <form action="/rooms_e" method="post">
+             <input type="hidden" name="Id_room" value="{{rooms.Id_room}}" />
+             <div class="form-group">
+                  <label for="Id_hostels" class="nuwm_text_form">Номер гуртожитка</label>
+                    <input list="id" class="form-control" name="Id_hostel"
+                    placeholder="Вкажіть керуючого" autocomplete="off" value="{{rooms.Id_hostel}}">
+                  <datalist id="id">
+                      {{#each hostels}}
+                      <option value="{{this.Id_hostel}}">
+                        Гуртожиток {{this.number}}
+                      </option>
+                      {{/each}}
+                  </datalist>
+                  </div>
+             <div class="form-group">
+                 <label for="number_room" class="nuwm_text_form">Номер кімнати</label>
+                 <input type="text" class="form-control" name="number_room" placeholder="Введіть номер кімнати"
+                 value = "{{rooms.number_room}}">
+             </div>
+             <div class="form-group">
+                 <label for="number_seats" class="nuwm_text_form">Кількість місць</label>
+                 <input type="text" class="form-control" name="number_seats" placeholder="Введіть кількість місць"
+                 value = "{{rooms.number_seats}}">
+             </div>
+             <div class="form-group">
+                 <label for="characteristic" class="nuwm_text_form">Характеристика</label>
+                 <input type="text" class="form-control" name="characteristic" placeholder="Введіть характеристику"
+                 value = "{{rooms.characteristic}}">
+             </div>
+             <div class="form-group">
+                 <label for="date_last_repair" class="nuwm_text_form">Дата останнього ремонту</label>
+                 <input type="date" class="form-control" name="date_last_repair" placeholder="Введіть дату останнього ремонту"
+                 value = "{{rooms.date_last_repair}}">
+             </div>
+             <button type="submit" class="nuwm_button">Зберегти</button>
+             <button type="reset" class="nuwm_button">Очистити</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,39 @@
+<div class="container" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-6 text-center mx-auto">
+            <h2 class="nuwm_text">Інструктаж БЖД
+                <br>(редагувати)
+            </h2>
+           <form action="/instruction_safety_e" method="post">
+             <input type="hidden" name="Id_instruction" value="{{instruction_safety.Id_instruction}}" />
+             <div class="form-group">
+                  <label for="Id_manager" class="nuwm_text_form">Номер гуртожитка</label>
+                    <input list="id" class="form-control" name="Id_manager"
+                    placeholder="Вкажіть керуючого" autocomplete="off" value="{{instruction_safety.Id_manager}}">
+                  <datalist id="id">
+                      {{#each managers}}
+                      <option value="{{this.Id_manager}}">
+                        Гуртожиток {{this.pib}}
+                      </option>
+                      {{/each}}
+                  </datalist>
+                  </div>
+             <div class="form-group">
+                 <label for="date" class="nuwm_text_form">Дату інструктажу</label>
+                 <input type="date" class="form-control" name="date" placeholder="Введіть дату інструктажу"
+                 value = "{{instruction_safety.date}}">
+             </div>
+             <div class="form-group">
+                 <label for="type_instruction" class="nuwm_text_form">Тип інструктажу</label>
+                 <input type="text" class="form-control" name="type_instruction" placeholder="Введіть тип інструктажу"
+                 value = "{{instruction_safety.type_instruction}}">
+             </div>
+             
+             <button type="submit" class="nuwm_button">Зберегти</button>
+             <button type="reset" class="nuwm_button">Очистити</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

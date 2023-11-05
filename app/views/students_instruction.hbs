@@ -1,0 +1,65 @@
+<div class="container-fluid" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="nuwm_text">Студенти інструктажу БЖД за  
+                &#8220;{{date_i}}&#8221;
+            </h1>
+<div class="text-right nuwm_add_button_div">
+              <a href="/students_instruction_c/{{this.Id_st_instruction}}" class="nuwm_button">Додати запис</a>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered nuwm_table">
+        <tbody>
+            <tr class="text-dark table-primary">
+                <th scope="col" ></th>
+                <th scope="col" ></th>
+                <th scope="col" >Код</th>
+                <th scope="col" >Код інструктажу</th>
+                <th scope="col" >ПІБ студента</th>
+                <th scope="col" >Додатково</th>
+            </tr>
+            {{#each students_instruction}}
+            <tr class="text-dark">
+                <td>
+                    <form action="/students_instruction_d/{{this.Id_st_instruction}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Видалити" class="nuwm_button"/>
+                    </form>
+                </td>
+                <td>
+                    <a href="/students_instruction_e/{{this.Id_st_instruction}}" class="nuwm_button">Редагувати</a>
+                </td>
+
+                <td>
+                    {{this.Id_st_instruction}}
+                </td>
+                <td>
+                    {{this.Id_instruction}}
+                </td>
+                <td>
+                    {{this.pib}}
+                </td>
+                <td>
+                    {{this.additionally}}
+                </td>
+            
+                {{!-- <td> --}}
+                    {{!-- <input type="hidden" name="Id_manager" value="{{this.Id_manager}}"/> --}}
+                {{!-- </td> --}}
+
+            </tr>
+            {{/each}}
+        
+
+
+
+
+        </tbody>
+    </table>
+</div>
+
+
+
+
+        </div>
+    </div>
+</div>
