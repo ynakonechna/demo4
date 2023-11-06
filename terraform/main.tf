@@ -51,9 +51,9 @@ module "app" {
   depends_on = [ module.alb_controller, module.https ]
 }
 
-# module "datadog" {
-#   source = "./modules/datadog"
-#   cluster_name = var.cluster_name
+module "datadog" {
+  source = "./modules/datadog"
+  cluster_name = var.cluster_name
 
-#   depends_on = [ module.eks ]
-# }
+  depends_on = [ module.eks ]
+}

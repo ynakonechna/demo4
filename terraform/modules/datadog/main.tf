@@ -1,3 +1,11 @@
+data "aws_secretsmanager_secret_version" "dd" {
+  secret_id = "dd-creds"
+}
+
+locals {
+  dd_secrets = jsondecode(data.aws_secretsmanager_secret_version.dd.secret_string)
+}
+
 resource "helm_release" "alb_controller" {
   name       = "datadog"
   chart      = "datadog"
@@ -9,14 +17,14 @@ resource "helm_release" "alb_controller" {
     value = var.cluster_name
   }
 
-  set {
-    name = "datadog.appKey"
-    value = ""
-  }
+  # set {
+  #   name = "datadog.appKey"
+  #   value = ""
+  # }
 
   set {
     name = "datadog.apiKey"
-    value = ""
+    value = local.dd_secrets["api-key"]
   }
 
   set {
@@ -27,6 +35,11 @@ resource "helm_release" "alb_controller" {
   set {
     name  = "datadog.logs.containerCollectAll"
     value = true
+  }
+
+  set {
+    name  = "datadog.site"
+    value = "us5.datadoghq.com"
   }
 
 }
