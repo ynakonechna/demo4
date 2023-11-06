@@ -10,7 +10,7 @@ resource "kubernetes_deployment" "app" {
   metadata {
     name = "app"
     labels = {
-      app = "demo3"
+      app = "demo4"
     }
   }
 
@@ -18,13 +18,13 @@ resource "kubernetes_deployment" "app" {
     replicas = 1
     selector {
       match_labels = {
-        app = "demo3"
+        app = "demo4"
       }
     }
     template {
       metadata {
         labels = {
-          app = "demo3"
+          app = "demo4"
         }
       }
       spec {
@@ -79,7 +79,7 @@ resource "kubernetes_service_v1" "app" {
 
   spec {
     selector = {
-      app = "demo3"
+      app = "demo4"
     }
 
     port {

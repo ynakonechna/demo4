@@ -6,7 +6,7 @@ locals {
   dd_secrets = jsondecode(data.aws_secretsmanager_secret_version.dd.secret_string)
 }
 
-resource "helm_release" "alb_controller" {
+resource "helm_release" "datadog" {
   name       = "datadog"
   chart      = "datadog"
   repository = "https://helm.datadoghq.com"
